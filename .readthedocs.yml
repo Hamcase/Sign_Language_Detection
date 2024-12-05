@@ -13,7 +13,7 @@ build:
 sphinx:
   configuration: source/conf.py
 
-# Install dependencies from the requirements.txt file
+# Install dependencies from the requirements_docs.txt file
 python:
   install:
-    - requirements: requirements.txt  # Optional, if you have dependencies
+    - requirements: requirements_docs.txt  # Optional, if you have dependencies
