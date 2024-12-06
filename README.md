@@ -8,6 +8,6 @@ Ce projet utilise un modèle de réseau de neurones YOLOv8 pour la détection de
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/Hamcase/Sign-Language-Detection.git
-   cd Sign-Language-Detection
+   git clone https://github.com/Hamcase/Sign_Language_Detection.git
+   cd Sign_Language_Detection
 
