@@ -1,0 +1,7 @@
+# Ignorer les fichiers générés automatiquement
+build/
+*.pickle
+*.doctree
+*.html
+*.js
+*.txt
