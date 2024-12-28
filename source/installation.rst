@@ -1,59 +1,21 @@
 Installation
 ============
 
-Cette section explique comment installer et configurer le projet pour détecter les signes de la langue des signes.
+Pour installer le projet, suivez les étapes ci-dessous :
 
-Prérequis
----------
+1. Clonez le dépôt GitHub :
+git clone https://github.com/Hamcase/Sign_Language_Detection.git cd Sign_Language_Detection
+2. Installez les dépendances Python :
+pip install -r requirements.txt
 
-Avant de commencer, assurez-vous d'avoir :
+3. Configurez le serveur Ollama (assurez-vous qu'il fonctionne à l'adresse `http://127.0.0.1:11434`).
 
-- **Python 3.8** ou supérieur installé.
-- **pip**, le gestionnaire de paquets Python.
-- Un GPU compatible CUDA (optionnel mais recommandé pour des performances optimales).
-- Une connexion Internet pour télécharger les dépendances et les fichiers du modèle.
+4. Téléchargez le modèle YOLO :
+Placez le fichier `bestjdid.pt` dans le répertoire racine du projet.
 
-Étapes d'installation
-----------------------
+5. Assurez-vous que votre webcam est fonctionnelle.
 
-1. **Cloner le dépôt GitHub**
-   Clonez le projet depuis le dépôt en ligne :
-
-   .. code-block:: bash
-
-      git clone https://github.com/Hamcase/ReadTheDocs_v2.git
-      cd https://github.com/Hamcase/ReadTheDocs_v2.git
-
-2. **Créer un environnement virtuel**
-   Configurez un environnement virtuel pour isoler les dépendances :
-
-   .. code-block:: bash
-
-      python -m venv venv
-      source venv/bin/activate  # Sous Linux/Mac
-      venv\Scripts\activate     # Sous Windows
-
-3. **Installer les dépendances**
-   Installez les bibliothèques nécessaires :
-
-   .. code-block:: bash
-
-      pip install -r requirements.txt
-
-4. **Télécharger le modèle YOLOv8**
-   Téléchargez le fichier modèle pré-entraîné (`YoloModel.pt`) et placez-le dans le dossier `Models/`.
-
-5. **Lancer un test rapide**
-   Vérifiez que tout est en place en exécutant la commande suivante :
-
-   .. code-block:: bash
-
-      python src/detect.py
-
-Problèmes fréquents
--------------------
-
-- **Erreur de module manquant** : Assurez-vous que toutes les dépendances sont installées avec ``pip install -r requirements.txt``.
-- **CUDA non détecté** : Si vous utilisez un GPU, assurez-vous que CUDA est correctement installé.
-
-Pour plus de détails, reportez-vous à la section ``Références`` de cette documentation.
+**Pré-requis système :**
+- Python 3.8 ou supérieur
+- OpenCV 4.5.1 ou supérieur
+- Pyttsx3, Ultralytics, et autres dépendances listées dans `requirements.txt`

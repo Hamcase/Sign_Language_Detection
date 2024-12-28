@@ -1,22 +1,13 @@
 Modèle
 ======
 
-Le projet repose sur le modèle YOLOv8, connu pour sa rapidité et sa précision dans la détection d'objets.
+**YOLO (You Only Look Once) :**
+- Modèle utilisé : `bestjdid.pt`
+- Architecture YOLO optimisée pour la détection en temps réel.
 
-Caractéristiques principales :
-- Architecture légère adaptée aux tâches en temps réel.
-- Compatible avec les entrées vidéo et images.
-
-Entraînement :
-- Modèle entraîné avec le dataset annoté de langue des signes.
-- Paramètres :
-  - Époques : 50
-  - Batch Size : 16
-  - Optimiseur : SGD
-  - Learning Rate : 0.001
-
-Performances :
-- Précision moyenne (mAP) : 95% sur l'ensemble de validation.
-- Temps de détection : ~10 ms par image sur GPU.
-
-Fichier modèle : `Models/YoloModel.pt`
+**Entraînement du modèle :**
+- Outil : Ultralytics YOLO.
+- Hyperparamètres :
+  - Learning rate : 0.01
+  - Epochs : 50
+  - Batch size : 16
