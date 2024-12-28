@@ -3,7 +3,7 @@
 Bienvenue dans la documentation du projet de Détection de la Langue des Signes
 ==========================================================================
 
-Ce projet vise à reconnaître les lettres de l'alphabet en langue des signes à l'aide de modèles d'intelligence artificielle et de vision par ordinateur.
+Ce projetssss vise à reconnaître les lettres de l'alphabet en langue des signes à l'aide de modèles d'intelligence artificielle et de vision par ordinateur.
 
 **Contenu de la documentation** :
 
