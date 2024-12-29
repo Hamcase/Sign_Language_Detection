@@ -1,7 +1,7 @@
-# **Détection et Traduction Automatique du Langage des Signes**
+# **AI-Based Sign Language Detector**
 
 ## **Résumé du Projet**  
-Ce projet propose une solution innovante pour la reconnaissance et la traduction du langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale (Text-to-Speech, TTS). Grâce à l’utilisation de **MediaPipe** pour détecter les keypoints (points clés) des gestes dans des vidéos ou via une webcam, et de modèles avancés comme **Mistral (Ollama)** pour l’enrichissement et la correction du texte généré, ce système vise à améliorer la communication et l'inclusion des personnes sourdes et malentendantes.
+Ce projet propose une solution innovante pour la reconnaissance du langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale (Text-to-Speech, TTS). Grâce à l’utilisation de **MediaPipe** pour détecter les keypoints (points clés) des gestes dans des vidéos ou via une webcam, et de modèles LLM avancés comme **Mistral (Ollama)** pour l’enrichissement et la correction du texte généré, ce système vise à améliorer la communication et l'inclusion des personnes sourdes et malentendantes.
 
 ---
 
@@ -22,26 +22,30 @@ Ce projet propose une solution innovante pour la reconnaissance et la traduction
 ## **Installation**
 
 ### **Clonez le dépôt GitHub :**  
-bash  
+```bash  
 git clone https://github.com/votre-nom-utilisateur/langage-des-signes.git  
 cd langage-des-signes  
+```
 
 ### **Installez les dépendances nécessaires :**  
-bash  
+```bash  
 pip install --upgrade pip  
-pip install -r requirements.txt  
+pip install -r requirements.txt
+```
 
 ### **Configurez l'API Mistral (Ollama) :**  
 Installez **Ollama CLI** si nécessaire : [Ollama CLI](https://ollama.com/).
 
 ### **Chargez le modèle Mistral :**  
-bash  
+```bash  
 ollama pull mistral  
+```
 
 ### **Testez l'installation :**  
 Vérifiez que toutes les dépendances sont correctement installées avec :  
-bash  
+```bash  
 python scripts/test_installation.py  
+```
 
 ---
 
@@ -53,16 +57,20 @@ python scripts/test_installation.py
 
 ### **Exécution de l'application :**  
 Lancez l'application principale :  
-bash  
+```bash  
 python app.py  
+```
 
 ### **Fournir l'entrée :**  
 - **Pour utiliser une vidéo :**  
-bash  
-python app.py --input video --path chemin/vers/video.mp4  
+```bash  
+python app.py --input video --path chemin/vers/video.mp4
+```
+  
 - **Pour utiliser la webcam :**  
-bash  
-python app.py --input webcam  
+```bash  
+python app.py --input webcam
+```
 
 ### **Sorties attendues :**  
 - Le texte correspondant au langage des signes détecté sera affiché.  
@@ -82,6 +90,7 @@ Les principales bibliothèques utilisées dans ce projet sont :
 ---
 
 ## **Structure du Projet**  
+```Plaintext
 ├── data/                    # Données d'entraînement et de validation  
 ├── models/                  # Modèles pré-entraînés (MediaPipe, Mistral)  
 ├── scripts/                 # Scripts Python pour les différentes étapes  
@@ -93,6 +102,7 @@ Les principales bibliothèques utilisées dans ce projet sont :
 ├── requirements.txt         # Dépendances Python  
 ├── README.md                # Documentation principale  
 
+```
 ---
 
 ## **Pipeline Technique**
