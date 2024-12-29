@@ -77,7 +77,7 @@ Numpy et Pandas : Pour les manipulations de données.
 Matplotlib (optionnel) : Pour visualiser les résultats.
 Structure du Projet
 plaintext
-Copy code
+```bash
 ├── data/                    # Données d'entraînement et de validation
 ├── models/                  # Modèles pré-entraînés (MediaPipe, Mistral)
 ├── scripts/                 # Scripts Python pour les différentes étapes
@@ -88,6 +88,7 @@ Copy code
 ├── app.py                   # Script principal pour lancer l'application
 ├── requirements.txt         # Dépendances Python
 ├── README.md                # Documentation principale
+```
 Pipeline Technique
 Détection des gestes :
 MediaPipe est utilisé pour identifier les keypoints (points clés) des gestes dans les vidéos ou via la webcam.
