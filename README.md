@@ -1,7 +1,7 @@
 # **AI-Based Sign Language Detector**
 
 ## **Résumé du Projet**  
-Ce projet propose une solution innovante pour la reconnaissance du langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale (Text-to-Speech, TTS). Grâce à l’utilisation de **MediaPipe** pour détecter les keypoints (points clés) des gestes dans des vidéos ou via une webcam, et de modèles LLM avancés comme **Mistral (Ollama)** pour l’enrichissement et la correction du texte généré, ce système vise à améliorer la communication et l'inclusion des personnes sourdes et malentendantes.
+Ce projet propose une solution innovante pour la reconnaissance et la traduction du langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale (Text-to-Speech, TTS). Grâce à l’utilisation de **MediaPipe** pour détecter les keypoints (points clés) des gestes dans des vidéos ou via une webcam, et de modèles avancés comme **Mistral (Ollama)** pour l’enrichissement et la correction du texte généré, ce système vise à améliorer la communication et l'inclusion des personnes sourdes et malentendantes.
 
 ---
 
@@ -24,13 +24,13 @@ Ce projet propose une solution innovante pour la reconnaissance du langage des s
 ### **Clonez le dépôt GitHub :**  
 ```bash  
 git clone https://github.com/votre-nom-utilisateur/langage-des-signes.git  
-cd langage-des-signes  
+cd langage-des-signes
 ```
 
 ### **Installez les dépendances nécessaires :**  
 ```bash  
 pip install --upgrade pip  
-pip install -r requirements.txt
+pip install -r requirements.txt  
 ```
 
 ### **Configurez l'API Mistral (Ollama) :**  
@@ -41,11 +41,6 @@ Installez **Ollama CLI** si nécessaire : [Ollama CLI](https://ollama.com/).
 ollama pull mistral  
 ```
 
-### **Testez l'installation :**  
-Vérifiez que toutes les dépendances sont correctement installées avec :  
-```bash  
-python scripts/test_installation.py  
-```
 
 ---
 
@@ -55,22 +50,22 @@ python scripts/test_installation.py
 - **Mode vidéo :** Chargez une vidéo contenant des gestes en langage des signes.  
 - **Mode webcam :** Effectuez des gestes en temps réel devant votre webcam.
 
-### **Exécution de l'application :**  
-Lancez l'application principale :  
-```bash  
-python app.py  
-```
+### **Exécution du pipeline :**
 
-### **Fournir l'entrée :**  
-- **Pour utiliser une vidéo :**  
-```bash  
-python app.py --input video --path chemin/vers/video.mp4
-```
-  
-- **Pour utiliser la webcam :**  
-```bash  
-python app.py --input webcam
-```
+1. **Enregistrement des gestes :**  
+   Pour enregistrer les coordonnées des gestes dans le fichier **gestures.pkl**, utilisez le script **capture.py** :  
+   ```bash   
+   python scripts/capture.py --input webcam  # Pour la webcam
+   ```
+   
+2. **Détection, correction et enrichissement du texte :**  
+   Une fois les coordonnées des gestes enregistrées, le script **detection.py** fait la détection, l'enrichissement et la correction du texte détecté :  
+  ``` bash  
+   python scripts/detection.py --input gestures.pkl  
+   ```
+
+3. **Synthèse vocale :**  
+   Le texte généré par **detection.py** sera converti en parole à l'aide du module TTS.
 
 ### **Sorties attendues :**  
 - Le texte correspondant au langage des signes détecté sera affiché.  
@@ -84,68 +79,51 @@ Les principales bibliothèques utilisées dans ce projet sont :
 - **OpenCV** : Pour le traitement des images et des vidéos.  
 - **Ollama CLI** : Pour utiliser le modèle **Mistral**.  
 - **pyttsx3** : Pour la synthèse vocale (TTS).  
-- **Numpy et Pandas** : Pour les manipulations de données.  
-- **Matplotlib** (optionnel) : Pour visualiser les résultats.
+- **Pickle** : Pour la sérialisation et la désérialisation des objets Python, permettant d'enregistrer et de charger les coordonnées des gestes dans le fichier **gestures.pkl**.
 
 ---
 
-## **Structure du Projet**  
+## **Structure du Projet** 
 ```Plaintext
-├── data/                    # Données d'entraînement et de validation  
-├── models/                  # Modèles pré-entraînés (MediaPipe, Mistral)  
+├── data/                    # Données d'entraînement  
+│   ├── gestures.pkl         # Coordonnées des signes  
 ├── scripts/                 # Scripts Python pour les différentes étapes  
-│   ├── sign_detection.py    # Détection des gestes avec MediaPipe  
-│   ├── text_processing.py   # Correction et enrichissement du texte  
-│   ├── tts.py               # Synthèse vocale  
-│   ├── test_installation.py # Script de test pour vérifier les installations  
-├── app.py                   # Script principal pour lancer l'application  
+│   ├── capture.py           # Enregistrement des coordonnées des signes dans gestures.pkl  
+│   ├── detection.py         # Script principal contenant la détection, l'enrichissement et la synthèse vocale du texte     │                               final  
 ├── requirements.txt         # Dépendances Python  
 ├── README.md                # Documentation principale  
-
 ```
+
 ---
 
 ## **Pipeline Technique**
 
-1. **Détection des gestes :**  
-   **MediaPipe** est utilisé pour identifier les keypoints (points clés) des gestes dans les vidéos ou via la webcam. Ces keypoints sont ensuite transformés en texte brut représentant les signes détectés.
+1. **Enregistrement des gestes :**  
+   Le script **capture.py** enregistre les coordonnées des signes détectés par la webcam et les stocke dans un fichier **gestures.pkl** pour un usage ultérieur.
 
-2. **Correction et enrichissement du texte :**  
-   Le texte brut généré est traité par **Mistral (Ollama)** pour :  
-   - Corriger les fautes d’orthographe et de grammaire.  
-   - Enrichir le texte pour le rendre fluide et compréhensible.
+2. **Détection des gestes :**  
+   **MediaPipe** est utilisé pour détecter les gestes en temps réel via la webcam ou une vidéo. Les coordonnées des points clés de chaque geste sont extraites.
 
-3. **Synthèse vocale (TTS) :**  
-   Le texte final corrigé est converti en audio grâce à une technologie **TTS** intégrée.
+3. **Correction et enrichissement du texte :**  
+   Le texte brut généré à partir des gestes est envoyé à **Mistral (Ollama)**, qui l'enrichit et corrige les erreurs pour le rendre fluide et cohérent.
 
----
-
-## **Exemples**
-
-- **Entrée vidéo :**  
-  Vidéo contenant un signe pour "Bonjour".  
-  **Sortie texte :** "Bonjour, comment allez-vous ?"  
-  **Sortie vocale :** Lecture à haute voix de la phrase corrigée.
-
-- **Entrée webcam :**  
-  Geste pour "Merci".  
-  **Sortie texte :** "Merci beaucoup."  
-  **Sortie vocale :** Lecture de "Merci beaucoup".
+4. **Synthèse vocale (TTS) :**  
+   Le texte final corrigé est converti en audio grâce à la technologie **TTS**, permettant à l'utilisateur d'entendre la traduction des signes.
 
 ---
+
 
 ## **Améliorations Futures**  
 - Ajouter un **avatar virtuel** pour traduire le texte généré en gestes visibles.  
-- Étendre la prise en charge à d’autres **langues des signes** (ex. **LSF**, **ASL**).  
+- Étendre la prise en charge à d’autres **langues des signes** (ex. **LSF**).  
 - Optimiser les performances pour réduire davantage la **latence**.
 
 ---
 
 ## **Contributeurs**  
-- **[Votre Nom]** – Développeur principal.  
-- **[Mentor ou Collaborateur]** – Contribution technique et académique.
+- **[Benakka Zaid]** – Développeur principal.
+- **[Amcassou Hanane]** – Développeur principal.  
+- **[M.Masrour Tawfik]** – Contribution technique et académique.
 
 ---
 
-## **Licence**  
-Ce projet est sous **licence MIT**. Voir le fichier **LICENSE** pour plus de détails.
