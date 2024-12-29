@@ -45,7 +45,7 @@ ollama pull mistral
 python scripts/test_installation.py
 ```
 ### **Utilisation**
-#### Modes Disponibles :
+####            Modes Disponibles :
 ##### Mode vidéo : Chargez une vidéo contenant des gestes en langage des signes.
 ##### Mode webcam : Effectuez des gestes en temps réel devant votre webcam.
 ##### Exécution de l'application :
