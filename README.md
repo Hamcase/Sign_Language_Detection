@@ -24,6 +24,9 @@ Ce projet propose une solution innovante pour la reconnaissance et la traduction
 ```bash
 git clone https://github.com/votre-nom-utilisateur/langage-des-signes.git
 cd langage-des-signes
+
+
+
 Installez les dépendances nécessaires :
 bash
 Copy code
@@ -35,7 +38,9 @@ Chargez le modèle Mistral :
 bash
 Copy code
 ollama pull mistral
-Testez l'installation : Vérifiez que toutes les dépendances sont correctement installées avec :
+Testez l'installation :
+Vérifiez que toutes les dépendances sont correctement installées avec :
+
 bash
 Copy code
 python scripts/test_installation.py
@@ -61,7 +66,7 @@ Sorties attendues :
 Le texte correspondant au langage des signes détecté sera affiché.
 Le texte corrigé sera lu à haute voix par le module TTS.
 Bibliothèques Utilisées
-Les principales bibliothèques utilisées dans ce projet sont :
+Les principales bibliothèques utilisées dans ce projet sont :
 
 MediaPipe : Pour la détection des keypoints des gestes.
 OpenCV : Pour le traitement des images et des vidéos.
@@ -70,7 +75,7 @@ pyttsx3 : Pour la synthèse vocale (TTS).
 Numpy et Pandas : Pour les manipulations de données.
 Matplotlib (optionnel) : Pour visualiser les résultats.
 Structure du Projet
-bash
+plaintext
 Copy code
 ├── data/                    # Données d'entraînement et de validation
 ├── models/                  # Modèles pré-entraînés (MediaPipe, Mistral)
@@ -83,14 +88,14 @@ Copy code
 ├── requirements.txt         # Dépendances Python
 ├── README.md                # Documentation principale
 Pipeline Technique
-1. Détection des gestes :
+Détection des gestes :
 MediaPipe est utilisé pour identifier les keypoints (points clés) des gestes dans les vidéos ou via la webcam.
 Ces keypoints sont ensuite transformés en texte brut représentant les signes détectés.
-2. Correction et enrichissement du texte :
-Le texte brut généré est traité par Mistral (Ollama) pour :
+Correction et enrichissement du texte :
+Le texte brut généré est traité par Mistral (Ollama) pour :
 Corriger les fautes d’orthographe et de grammaire.
 Enrichir le texte pour le rendre fluide et compréhensible.
-3. Synthèse vocale (TTS) :
+Synthèse vocale (TTS) :
 Le texte final corrigé est converti en audio grâce à une technologie TTS intégrée.
 Exemples
 Entrée vidéo :
@@ -100,7 +105,7 @@ Sortie vocale : Lecture à haute voix de la phrase corrigée.
 Entrée webcam :
 Geste pour "Merci".
 Sortie texte : Merci beaucoup.
-Sortie vocale : Lecture de Merci beaucoup.
+Sortie vocale : Lecture de "Merci beaucoup".
 Améliorations Futures
 Ajouter un avatar virtuel pour traduire le texte généré en gestes visibles.
 Étendre la prise en charge à d’autres langues des signes (ex. LSF, ASL).
@@ -108,10 +113,3 @@ Optimiser les performances pour réduire davantage la latence.
 Contributeurs
 [Votre Nom] – Développeur principal.
 [Mentor ou Collaborateur] – Contribution technique et académique.
-Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
-
-Références
-MediaPipe Documentation
-Ollama (Mistral)
-Dataset ASL Alphabets
