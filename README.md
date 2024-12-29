@@ -60,7 +60,7 @@ ollama pull mistral
    
 2. **Détection, correction et enrichissement du texte :**  
    Une fois les coordonnées des gestes enregistrées, le script **detection.py** fait la détection, l'enrichissement et la correction du texte détecté :  
-  ``` bash  
+   ``` bash  
    python scripts/detection.py --input gestures.pkl  
    ```
 
@@ -89,7 +89,7 @@ Les principales bibliothèques utilisées dans ce projet sont :
 │   ├── gestures.pkl         # Coordonnées des signes  
 ├── scripts/                 # Scripts Python pour les différentes étapes  
 │   ├── capture.py           # Enregistrement des coordonnées des signes dans gestures.pkl  
-│   ├── detection.py         # Script principal contenant la détection, l'enrichissement et la synthèse vocale du texte     │                               final  
+│   ├── detection.py         # Script principal contenant la détection, l'enrichissement et la synthèse vocale du texte
 ├── requirements.txt         # Dépendances Python  
 ├── README.md                # Documentation principale  
 ```
