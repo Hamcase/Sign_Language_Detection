@@ -113,3 +113,11 @@ Optimiser les performances pour réduire davantage la latence.
 Contributeurs
 [Votre Nom] – Développeur principal.
 [Mentor ou Collaborateur] – Contribution technique et académique.
+
+
+- **Titres** (avec `##` et `###` pour les sous-sections).
+- **Blocs de code** sont formatés avec des triple backticks ````bash` ou ````plaintext`` pour indiquer un code à copier-coller.
+- **Listes numérotées et à puces** sont bien structurées pour une lecture claire.
+
+Cela devrait maintenant être prêt à être copié dans votre `README.md`.
+
