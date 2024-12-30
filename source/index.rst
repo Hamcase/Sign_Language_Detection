@@ -16,7 +16,6 @@ Ce projet propose une solution innovante pour traduire le langage des signes en 
    project_structure
    future_improvements
    faq
-   contributors
 
 Contributeurs
 =============
