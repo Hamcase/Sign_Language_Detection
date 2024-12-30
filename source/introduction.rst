@@ -1,15 +1,16 @@
 Introduction
 ============
 
-Le projet de Détection de la Langue des Signes vise à faciliter la communication entre les utilisateurs de la langue des signes et les personnes entendantes grâce à l'IA.
+Résumé du projet
+----------------
+Ce projet propose une solution innovante pour traduire le langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale. Il utilise :
 
-**Objectifs principaux :**
-- Reconnaissance des lettres de l'alphabet en langue des signes.
-- Génération de texte interprété et lecture vocale.
-- Utilisation de YOLO pour la détection en temps réel et de Ollama pour la correction du texte.
+- **Mediapipe** pour détecter les points clés des gestes capturés via une vidéo ou une webcam.
+- **Ollama Mistral** pour corriger et enrichir le texte généré.
+- **Text-to-Speech (TTS)** pour vocaliser le texte final.
 
-**Technologies utilisées :**
-- YOLO pour la vision par ordinateur.
-- OllamaLLM pour la correction de texte.
-- OpenCV pour la manipulation vidéo.
-- Pyttsx3 pour le Text-to-Speech.
+Objectifs
+---------
+1. Reconnaissance des gestes en temps réel.
+2. Correction et enrichissement du texte.
+3. Conversion du texte en parole pour une meilleure accessibilité.

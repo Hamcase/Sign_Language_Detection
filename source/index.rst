@@ -1,34 +1,34 @@
-Projet de Détection de la Langue des Signes
-===========================================
+.. AI-Based Sign Language Detection documentation master file
 
-Bienvenue dans la documentation du projet de Détection de la Langue des Signes
-==============================================================================
+Welcome to AI-Based Sign Language Detection's documentation!
+=============================================================
 
-Ce projet utilise des technologies d'intelligence artificielle et de vision par ordinateur pour reconnaître les lettres de l'alphabet en langue des signes. Il offre une solution innovante et interactive pour la communication entre les personnes entendantes et celles utilisant la langue des signes.
-
-**Contenu de la documentation :**
+Ce projet propose une solution innovante pour traduire le langage des signes en texte fluide et compréhensible, suivi d'une synthèse vocale. Grâce à Mediapipe, Ollama Mistral et Text-to-Speech, il permet une interaction complète et accessible en temps réel.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contenu
+   :caption: Table des matières
 
    introduction
    installation
-   utilisation
-   architecture
-   database
-   modele
-   processus
-   ameliorations
-   references
+   usage
+   technical_pipeline
+   project_structure
+   future_improvements
+   faq
+   contributors
 
----
+Contributeurs
+=============
+Nous remercions les membres de l'équipe pour leurs contributions à ce projet :
 
-**Contribuer** :
-Si vous souhaitez contribuer à ce projet ou signaler un problème, rendez-vous sur le [GitHub officiel](https://github.com/Hamcase/Sign_Language_Detection).
+- **Benakka Zaid** – Développeur principal.
+- **Amcassou Hanane** – Développeur principal.
+- **M. Masrour Tawfik** – Contribution technique et académique.
 
-**Auteurs** :
-- BENAKKA Zaid et AMCASSOU Hanane
+Indices and tables
+==================
 
-**Licence** :
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

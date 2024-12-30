@@ -1,6 +1,16 @@
-Références
-==========
+FAQ et Dépannage
+================
 
-- Documentation officielle YOLO : [YOLO](https://docs.ultralytics.com)
-- Bibliothèque Pyttsx3 : [Pyttsx3](https://pyttsx3.readthedocs.io)
-- Serveur Ollama : [Ollama](https://ollama.ai)
+Problèmes courants
+------------------
+1. **Le modèle Ollama ne fonctionne pas :**
+   - Vérifiez que le serveur est actif : `ollama list`.
+   - Assurez-vous que le modèle Mistral est téléchargé.
+
+2. **La latence est élevée :**
+   - Utilisez un GPU pour accélérer Mediapipe.
+
+Solutions
+---------
+- Consultez la documentation officielle des bibliothèques utilisées.
+- Réinitialisez les configurations en cas de problème persistant.

@@ -1,21 +1,27 @@
-Installation
-============
+Guide d'Utilisation
+===================
 
-Pour installer le projet, suivez les étapes ci-dessous :
+Modes disponibles
+-----------------
+- **Mode vidéo :** Chargez une vidéo contenant des gestes en langage des signes.
+- **Mode webcam :** Réalisez des gestes en temps réel devant une caméra.
 
-1. Clonez le dépôt GitHub :
-git clone https://github.com/Hamcase/Sign_Language_Detection.git cd Sign_Language_Detection
-2. Installez les dépendances Python :
-pip install -r requirements.txt
+Enregistrement des gestes
+-------------------------
+Utilisez le script **capture.py** pour enregistrer les keypoints des gestes dans un fichier `gestures.pkl`.
 
-3. Configurez le serveur Ollama (assurez-vous qu'il fonctionne à l'adresse `http://127.0.0.1:11434`).
+.. code-block:: bash
+   python scripts/capture.py --input webcam
 
-4. Téléchargez le modèle YOLO :
-Placez le fichier `bestjdid.pt` dans le répertoire racine du projet.
+Détection et correction des gestes
+----------------------------------
+Lancez le pipeline principal avec le script **detection.py** pour détecter, corriger et enrichir le texte généré.
 
-5. Assurez-vous que votre webcam est fonctionnelle.
+.. code-block:: bash
+   python scripts/detection.py --input gestures.pkl
 
-**Pré-requis système :**
-- Python 3.8 ou supérieur
-- OpenCV 4.5.1 ou supérieur
-- Pyttsx3, Ultralytics, et autres dépendances listées dans `requirements.txt`
+Sorties attendues
+-----------------
+- Texte détecté à partir des gestes.
+- Texte corrigé et enrichi via Ollama Mistral.
+- Parole générée via Text-to-Speech.
